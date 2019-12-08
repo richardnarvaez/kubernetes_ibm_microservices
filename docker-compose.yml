@@ -1,0 +1,20 @@
+version: '3.0'
+services:
+    # db:
+    #     image: mongo
+    #     ports:
+    #       - "27017:27017"
+    one-service:
+        build:
+            context: .
+            dockerfile: ./one-service/dev.Dockerfile
+        container_name: one-service
+        volumes:
+            - ./one-service:/app
+        ports:
+            - "2400:3000"
+    # two-service:
+    #     build: ./two-service
+    #     container_name: two-service
+    #     ports:
+    #         - "10066:4000"

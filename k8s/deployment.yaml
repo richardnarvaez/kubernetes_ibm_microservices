@@ -1,0 +1,24 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: one-service
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: one-service
+  template:
+    metadata:
+      labels:
+        app: one-service
+    spec:
+      containers:
+      - name: one-service
+        image: one-service:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

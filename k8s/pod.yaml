@@ -1,0 +1,17 @@
+# Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-service
+  labels:
+    name: one-service
+spec:
+  containers:
+  - name: one-service
+    image: one-service:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000

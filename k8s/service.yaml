@@ -1,0 +1,16 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: one-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: one-service
+  ports:
+  - protocol: TCP
+    name: "2400"
+    port: 2400
+    targetPort: 3000
+status:
+  loadBalancer: {}
