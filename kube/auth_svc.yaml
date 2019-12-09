@@ -50,7 +50,7 @@ metadata:
       config:
         auth_service: "auth-svc:3000"
 spec:
-  type: ClusterIP
+  type: LoadBalancer #ClusterIP
   selector:
     run: auth-svc
   ports:
